@@ -45,7 +45,7 @@ From the column DATE_OF_REGISTRAION parse out the registration year. Using this 
 * **Company Registration by principal business activity (for the year 2015)** <br>
 In this problem filter only the records for the year 2015. Then   count the number of company registration by "PRINCIPAL_BUSINESS_ACTIVITY" and print them out in table format, similar to the previous tables.
 
-4. **Grouped aggregation**<br>
+* **Grouped aggregation**<br>
 For this problem, count the number of companies, grouped on both the year and "Principal Business Activity". Also, restrict the years to 2000-2019.
 
 
