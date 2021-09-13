@@ -1,12 +1,14 @@
+//In a JavaScript action, you can parse CSV data using the csv library.
 const csv = require("csv-parser");
 const fs = require("fs"); // require fs module of node js
 const results = [];
+//To use the module, create a readable stream to a desired CSV file, instantiate csv, and pipe the stream to csv.
 fs.createReadStream("Tripura.csv")
   .pipe(csv({}))
   .on("data", (data) => results.push(data))
   .on("end", () => {
     // TESTCASE 1
-    let count1 = (count2 = count3 = count4 = count5 = 0);
+    let count1 = count2 = count3 = count4 = count5 = 0;
     let dictAuthorized = {}; // AuthorizedCap stored in object
     for (let i = 0; i < results.length; i++) {
       let k = results[i].AUTHORIZED_CAP;
@@ -21,6 +23,7 @@ fs.createReadStream("Tripura.csv")
     dictAuthorized["10L to 1Cr"] = count3;
     dictAuthorized["1Cr to 10Cr"] = count4;
     dictAuthorized[">10Cr "] = count5;
+
     const jsonData1 = JSON.stringify(dictAuthorized);
     console.log(jsonData1);
     fs.writeFile("authorized_cap.json", jsonData1, (err) => {
@@ -39,7 +42,7 @@ fs.createReadStream("Tripura.csv")
       var k = results[i].DATE_OF_REGISTRATION;
       var m = k.toString();
       var str = m;
-      var year = str.slice(6);
+      var year = str.slice(6); //12
       let yfinal = parseInt(year);
       yfinal += 2000;
       for (let key in dateRes) {
