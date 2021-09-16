@@ -26,7 +26,7 @@
 
 - Visual studio Code-
 
-4. ### **Usage**
+4. ### **Usage AREAS  **
 
    The project is usable in situations when we need to filter or retrieve data from a csv file using node js and convert into json file and download those generated JSON file to the local system.
 
